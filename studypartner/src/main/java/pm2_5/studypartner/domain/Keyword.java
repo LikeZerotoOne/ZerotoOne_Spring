@@ -25,6 +25,7 @@ public class Keyword extends BaseEntity {   // 키워드 추출
     private String keyword;
 
     // 키워드 설명
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     // 중요도 체크

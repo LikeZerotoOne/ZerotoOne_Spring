@@ -8,18 +8,13 @@ import pm2_5.studypartner.domain.Document;
 import pm2_5.studypartner.domain.Member;
 import pm2_5.studypartner.dto.document.DocumentDTO;
 import pm2_5.studypartner.dto.document.TextRespDTO;
-import pm2_5.studypartner.dto.member.MemberDTO;
 import pm2_5.studypartner.dto.papago.ImgTransReqDTO;
 import pm2_5.studypartner.dto.papago.TextTransReqDTO;
-import pm2_5.studypartner.error.ApiException;
-import pm2_5.studypartner.error.MemberErrorStatus;
 import pm2_5.studypartner.repository.DocumentRepository;
 import pm2_5.studypartner.repository.MemberRepository;
 import pm2_5.studypartner.util.PapagoUtil;
 
-import javax.print.Doc;
 import java.io.IOException;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,7 +28,7 @@ public class DocumentService {
     private final PapagoUtil papagoUtil;
 
     // 텍스트 번역 및 저장
-    public Long registerTransDoc(TextTransReqDTO textTransReqDTO) {
+    public Long registerTextTransDoc(TextTransReqDTO textTransReqDTO) {
         
         Member findMember = memberRepository.findById(textTransReqDTO.getMemberId()).get();
 
