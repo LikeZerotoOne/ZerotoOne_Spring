@@ -22,13 +22,6 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    // 회원 인증
-    @GetMapping("/auth/{memberId}")
-    public void authMember(@PathVariable Long memberId){
-
-        memberService.findMember(memberId);
-    }
-
     // 아이디 중복 체크 메소드
     @GetMapping("/{username}")
     public ResponseEntity<String> checkIdGET(@PathVariable String username){

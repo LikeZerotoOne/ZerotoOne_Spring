@@ -23,6 +23,14 @@ public class MemberApiController {
 
     private final MemberService memberService;
 
+    // 회원 인증
+    @GetMapping("/auth/{memberId}")
+    public void authMember(@PathVariable Long memberId){
+
+        memberService.findMember(memberId);
+    }
+
+
     // 회원 정보 조회 메소드
     @GetMapping("/{memberId}")
     public MemberDTO getMember(@PathVariable Long memberId){
