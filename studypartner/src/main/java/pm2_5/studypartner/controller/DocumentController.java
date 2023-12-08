@@ -22,12 +22,19 @@ public class DocumentController {
     private final MemberService memberService;
     private final DocumentService documentService;
 
+    // 회원 인증
+    @GetMapping("/auth/{memberId}")
+    public void authMember(@PathVariable Long memberId){
+
+        memberService.findMember(memberId);
+    }
+
     // 텍스트를 이용하여 문서 생성
     @PostMapping("/text")
     public Map<String, Long> addTransDoc(@ModelAttribute TextTransReqDTO textTransReqDTO){
 
         Map<String, Long> documentMap = new HashMap<>();
-        documentMap.put("documentId", documentService.registerTextTransDoc(textTransReqDTO));
+        documentMap.put("documentId", documentService.registerTransDoc(textTransReqDTO));
         return documentMap;
     }
 

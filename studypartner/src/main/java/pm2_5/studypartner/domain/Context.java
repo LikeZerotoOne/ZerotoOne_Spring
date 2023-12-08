@@ -24,7 +24,6 @@ public class Context extends BaseEntity {   // 문단 요약
     private String content;
 
     // 문단 요약
-    @Column(columnDefinition = "TEXT")
     private String summary;
 
     // 중요도 체크
